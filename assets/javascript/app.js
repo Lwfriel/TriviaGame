@@ -48,7 +48,15 @@ $(document).ready(function () {
     function stop() {
         clearInterval(intervalId);
       }
-  
+
+     // function onStart() {
+          $("#gameBox").hide()
+          $("#score").hide()
+     // };
+     // onStart()
+
+
+
 
 
 //Create start button
