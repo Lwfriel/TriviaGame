@@ -54,6 +54,11 @@ $(document).ready(function () {
           $("#score").hide()
      // };
      // onStart()
+     $("#startButton").click(function(){
+       $("#startButton").hide();
+       $("#gameBox").show();  
+     })
+     
 
 
 
