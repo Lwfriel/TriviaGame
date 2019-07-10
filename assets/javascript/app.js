@@ -3,7 +3,7 @@ $(document).ready(function () {
     var timeLeft = 30;
 
     var Q1 = {
-        question: "Quesiton 1",
+        question: "Question 1",
         a: "Answer 1",
         b: "Answer 2",
         c: "Answer 3",
@@ -11,7 +11,7 @@ $(document).ready(function () {
         ans: "Answer 1"
     };
     var Q2 = {
-        question: "Quesiton 2",
+        question: "Question 2",
         a: "Answer 1",
         b: "Answer 2",
         c: "Answer 3",
@@ -19,7 +19,7 @@ $(document).ready(function () {
         ans: "Answer 2"
     };
     var Q3 = {
-        question: "Quesiton 3",
+        question: "Question 3",
         a: "Answer 1",
         b: "Answer 2",
         c: "Answer 3",
@@ -27,7 +27,7 @@ $(document).ready(function () {
         ans: "Answer 3"
     };
     var Q4 = {
-        question: "Quesiton 4",
+        question: "Question 4",
         a: "Answer 1",
         b: "Answer 2",
         c: "Answer 3",
@@ -50,7 +50,9 @@ $(document).ready(function () {
     }
 
     $("#gameBox").hide()
-    $("#score").hide()
+    $("#score").hide();
+    
+
 
     function timer() {
         clearInterval(intervalId);
@@ -60,6 +62,14 @@ $(document).ready(function () {
         }, 1000)
     }
 
+    function questionDOM() {
+        $("#question").text(questionArray[count].question)
+        $("#a").text(questionArray[count].a)
+        $("#b").text(questionArray[count].b)
+        $("#c").text(questionArray[count].c)
+        $("#d").text(questionArray[count].d)
+    }
+
     function play() {
         timeLeft = 30;
         count = 0;
@@ -67,14 +77,16 @@ $(document).ready(function () {
         incorrect = 0;
         unanswered = 0;
         clearInterval(intervalId)
+        timer()
         $("#startButton").hide();
         $("#gameBox").show();
         $("#score").hide();
-        timer()
+        questionDOM ();
     }
 
-    $("#startButton").click(play)
+   
 
+    $("#startButton").click(play)
 
 
 
