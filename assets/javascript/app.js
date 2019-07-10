@@ -52,11 +52,11 @@ $(document).ready(function () {
     $("#gameBox").hide()
     $("#score").hide()
 
-    function run() {
-        clearInterval(IntervalId);
-        intervalId = setInterval(function(){
+    function timer() {
+        clearInterval(intervalId);
+        intervalId = setInterval(function () {
             timeLeft--;
-            $("#timerBox").html("<h1>Time Remaining: " + timeLeft + " </h1>");
+            $("#timerBox").html("<h2> Time Remaining: " + timeLeft + "</h2>");
         }, 1000)
     }
 
@@ -70,6 +70,7 @@ $(document).ready(function () {
         $("#startButton").hide();
         $("#gameBox").show();
         $("#score").hide();
+        timer()
     }
 
     $("#startButton").click(play)
