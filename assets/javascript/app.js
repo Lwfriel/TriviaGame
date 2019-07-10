@@ -35,9 +35,9 @@ $(document).ready(function () {
         ans: "Answer 4"
     };
 
-    var questionArray = [Q1, Q2, Q3, Q4];
+    var questionArray = [Q1, Q2, Q3, Q4];// array of questions
 
-    var count = 0;
+    var count = 0; //this is index
 
     var correct = 0;
     var incorrect = 0;
@@ -201,9 +201,10 @@ $("#d").click(function() {
     $("#rightAnswer").html("<h1>The correct answer is:" + questionArray[count].ans + "</h1>");
     timeout()
     }
-
 }
 )
+
+      $(".restart").click(play)
 
 
     //Create start button * 
