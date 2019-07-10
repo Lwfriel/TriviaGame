@@ -59,7 +59,37 @@ $(document).ready(function () {
         intervalId = setInterval(function () {
             timeLeft--;
             $("#timerBox").html("<h2> Time Remaining: " + timeLeft + "</h2>");
+            if (timeLeft === 0){
+                stop();
+                $("#rightAnswer").html("<h2>The Correct Answer is: " + questionArray[count].ans +  "</h2>")
+                unanswered++
+                timeout()
+            }
         }, 1000)
+    }
+
+    function timeout() {
+        setTimeout(function(){
+            count++;
+            nextQuestion();
+      }, 5000);
+
+
+    }
+
+    function nextQuestion() {
+        if (count===questionArray.length){
+            $("#score").show();
+            $("#gameBox").hide();
+            $("#correct").text(correct);
+            $("#incorrect").text(incorrect);
+            $("#unanswered").text(unanswered);
+            return
+        }
+        timeLeft = 3; 
+        timer(); 
+        questionDOM();
+
     }
 
     function questionDOM() {
@@ -77,11 +107,10 @@ $(document).ready(function () {
         incorrect = 0;
         unanswered = 0;
         clearInterval(intervalId)
-        timer()
         $("#startButton").hide();
         $("#gameBox").show();
         $("#score").hide();
-        questionDOM ();
+        nextQuestion();
     }
 
    
